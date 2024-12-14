@@ -1,0 +1,72 @@
+#weather-data {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #c0ecf6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Barre de navigation */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Section principale */
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+header, section {
+  margin-bottom: 2rem;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+/* Styles spécifiques pour le portfolio */
+.portfolio-links a {
+  display: block;
+  margin-bottom: 1rem;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.portfolio-links a:hover {
+  text-decoration: underline;
+}
