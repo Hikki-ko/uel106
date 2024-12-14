@@ -1,8 +1,119 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<title>Ma première page HTML</title>
-<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Alexandre Victor Abrantès</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<h1>Salut Github !</h1>
-<body>
+    <!-- Barre de navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section principale contenant les informations du CV -->
+    <main>
+        <div id="weather-data">
+            <script>
+                const apiKey = "82d99ba5c38f21c022076b3c2d176c6c"; // Votre clé d'API
+                const city = "La Plaine-des-Palmistes"; // La ville pour laquelle vous souhaitez obtenir les données météo
+                const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`;
+            
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const weatherDiv = document.getElementById('weather-data');
+                        const temperature = data.main.temp;
+                        const description = data.weather[0].description;
+                        const city = data.name;
+                        const country = data.sys.country;
+            
+                        weatherDiv.innerHTML = `
+                            <h2>Météo à ${city}, ${country}</h2>
+                            <p>Température : ${temperature}°C</p>
+                            <p>Description : ${description}</p>
+                        `;
+                    })
+                    .catch(error => {
+                        const weatherDiv = document.getElementById('weather-data');
+                        weatherDiv.innerHTML = `<p>Erreur lors de la récupération des données météo</p>`;
+                        console.error('Erreur:', error);
+                    });
+            </script>
+        </div>
+        
+        <section class="header">
+            <h1>Alexandre Victor Abrantès</h1>
+            <p>Étudiant en Licence Professionnelle d'informatique</p>
+            <p>Recherche de stage en services informatiques</p>
+        </section>
+        
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Email : <a href="mailto:alexv.abrantes@gmail.com">alexv.abrantes@gmail.com</a></p>
+            <p>Téléphone : 06 93 63 98 36</p>
+            <p>Adresse : 12 Rue Louis Carron, La Plaine-des-Palmistes (97431)</p>
+        </section>
+        
+        <section class="education">
+            <h2>Diplômes et Formations</h2>
+            <ul>
+                <li>Licence Professionnelle Métiers de l'Informatique - Applications Web, Université de Limoges, Depuis 2024</li>
+                <li>Certification PIX, Emergence OI, Saint-Benoît, Février 2024</li>
+                <li>Baccalauréat général littéraire, Lycée Amiral Pierre Bouvet, Saint-Benoit, De 2016 à 2020</li>
+            </ul>
+        </section>
+        
+        <section class="skills">
+            <h2>Compétences Informatiques</h2>
+            <ul>
+                <li>Langages : HTML5, CSS, JavaScript</li>
+                <li>Logiciels de présentation : PowerPoint, Google Slides, Canva</li>
+                <li>Éditeurs de textes : Google Docs, Word</li>
+                <li>Logiciels de tableurs : Microsoft Excel, Google Sheets</li>
+                <li>Applications d'édition graphique : Clip Studio Paint, Procreate</li>
+            </ul>
+        </section>
+        
+        <section class="experience">
+            <h2>Expériences Professionnelles</h2>
+            <ul>
+                <li>Illustrateur numérique, Particuliers, Télé-travail, Depuis janvier 2021</li>
+                <li>Animateur socio-culturel, Les Merveilles de la Plaine, Plaine-des-Palmistes, De mars 2022 à août 2022</li>
+                <li>Professeur d'anglais, Les Petits Bilingues, Saint-André, Novembre 2015</li>
+            </ul>
+        </section>
+        
+        <section class="languages">
+            <h2>Langues</h2>
+            <ul>
+                <li>Créole : Utilisateur expérimenté</li>
+                <li>Français : C2</li>
+                <li>Anglais : C1</li>
+                <li>Espagnol : B1</li>
+            </ul>
+        </section>
+        
+        <section class="interests">
+            <h2>Centres d'Intérêt</h2>
+            <ul>
+                <li>Lecture : Romans policiers</li>
+                <li>Musique : Indie, Rock, Classique</li>
+                <li>Écriture : Roleplay sur forum</li>
+            </ul>
+        </section>
+        <img src="https://doodleipsum.com/700/hand-drawn?i=38669f43d56c05c7a0eacf970d68e8fd" alt="">
+        <section class="social">
+            <h2>Réseaux Sociaux</h2>
+            <ul>
+                <li><a target="_blank" href="https://twitter.com/hikki_jpeg">Twitter</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/hikki.jpeg">Instagram</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
 </html>
